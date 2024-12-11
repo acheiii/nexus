@@ -194,28 +194,31 @@ while true; do
     echo "3. 查看 Prover ID"
     echo "4. 停止 Nexus"
     echo "5. 退出"
-read -p "请选择操作 [1-5]: " choice
-case $choice in
-    1)
-        setup_directories
-        check_dependencies
-        download_files
-        start_prover
-        ;;
-    2)
-        check_status
-        ;;
-    3)
-        show_prover_id
-        ;;
-    4)
-        stop_prover
-        ;;
-    5)
-        echo -e "\n${GREEN}感谢使用！${NC}"
-        cleanup
-        ;;
-    *)
-        echo -e "${RED}无效的选择${NC}"
-        ;;
-esac
+    echo "6. 退出"
+    
+    read -p "请选择操作 [1-5]: " choice
+    case $choice in
+        1)
+            setup_directories
+            check_dependencies
+            download_files
+            start_prover
+            ;;
+        2)
+            check_status
+            ;;
+        3)
+            show_prover_id
+            ;;
+        4)
+            stop_prover
+            ;;
+        5)
+            echo -e "\n${GREEN}感谢使用！${NC}"
+            cleanup
+            ;;
+        *)
+            echo -e "${RED}无效的选择${NC}"
+            ;;
+    esac
+done
